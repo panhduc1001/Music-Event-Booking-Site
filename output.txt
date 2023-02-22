@@ -1,0 +1,177 @@
+Duc Phan (6):
+      Update main.py
+      Update main.py
+      Update views.py
+      Update views.py
+      Add 404 and 500 error handling
+      Minor 404 fix
+
+Hans Teh (124):
+      Create main.py
+      Create flask prototype of website
+      Testing git and github
+      Added new test line to main.py
+      Removed test comments from main.py
+      Added proper home page navigation
+      Merge branch 'main' of https://github.com/HansT01/IAB207-Events
+      Added .pyc files to git ignore, removed other pycache files
+      Created models.py
+      Removed css navigation
+      Added more parameters to the event model
+      Cleaned up base.html
+      Implemented findevents functionality and navigation
+      Added comment functionality to event modals
+      Implemented full navigation functionality
+      Updated home.html to have proper navigation
+      Fixed account url in home
+      Added modal button referencing
+      Cleaned up bookingcontent.html, added a booking model
+      Added event object to booking class, added booking functionality
+      Added ticket price to booking display
+      Replaced image link with event object image
+      Created flask forms for login and register
+      Updated file extensions, updated login.jinja and register.jinja
+      Cleaned up register.jinja
+      Updated account.jinja and register.jinja
+      Cleaned up jinja templates
+      Added flash message functionality
+      Adjusted eventeditormodal.jinja and findevents.jinja
+      Created EventForm in forms.py
+      Implemented event form
+      Fixed formatting problems
+      Changed submit field type from button to submit
+      Implemented comment forms
+      Added booking forms
+      Implemented filter form
+      Modified spacing in account and register forms
+      Modified models to use SQLAlchemy
+      Implemented proper register and login functionality
+      Added logout page
+      Implemented create event to database
+      Added genre to events model
+      Cleaned up views.py
+      Added commenting functionality
+      Attached username to comment user_id for each event
+      Added booking functionality
+      Added update event function
+      Added edit event functionality
+      Added prepopulation for event editor
+      Reverted status options to not use indices
+      Changed status display text to uppercase
+      Added default behaviours for image field when editing events
+      Cleaned up some formatting
+      Cleaned up display and changed date display formatting
+      Added filter functionality to find events
+      Improved display formatting
+      Removed file requirement under image field, Fixed query bug
+      Cleaned up views.py, added placeholder text
+      Added login requirements for some features
+      Removed all data in database
+      Added database to gitignore
+      Modified error appearance
+      Added titles for event editor
+      Fixed typo
+      Added login requirement to booking tickets
+      Added description to bookedevents
+      Fixed inconsistent models
+      Added description to views function. Changed filter_by queries to get queries.
+      Added input requirement to images.
+      Changed logout messages
+      Fixed bug in update_event get query
+      Added a script to create database
+      Renamed bookingcontent to bookingmodal
+      Added dynamic textarea size changes
+      Fixed inconsistent css under comments
+      Added a page for event details
+      Merge branch 'main' of https://github.com/HansT01/IAB207-Events
+      Fixed wording
+      Implemented booked status functionality
+      Fixed event editor modal problems with booked events
+      Changed wording for booking rows
+      Changed formatting of event details page
+      Event card now references event details
+      Merge branch 'main' of https://github.com/HansT01/IAB207-Events
+      Removed redundant modal
+      Fixed missing comment attribute
+      Removed all redundant modals
+      BYE BYE FORMS
+      Added back button to event details page
+      Merge branch 'main' of https://github.com/HansT01/IAB207-Events
+      Modified display of several components and pages
+      Split up views.py
+      Small css change to error pages
+      Modified appearance of delete event button for smaller screens
+      Changed some delete event stuff
+      Added delete events functionality
+      Fixed edit event bug
+      Fixed hard-coded link and redesigned button
+      Added booked filter to event filters
+      Modified venue formatting
+      Added comments to findevents, and added a 404 to missing event id
+      Merge branch 'main' of https://github.com/HansT01/IAB207-Events
+      Added comments to bookedevents
+      Made error handling in auth.py consistent
+      Delete events.sqlite
+      Merge branch 'main' of https://github.com/HansT01/IAB207-Events
+      Updated error handling in routes to be consistent
+      Removed sqlite gitignore
+      Merge branch 'main' of https://github.com/HansT01/IAB207-Events
+      Update requirements.txt
+      Added gunicorn to requirements
+      Integrated fontawesome icons locally
+      BREAKING CHANGE, testing heroku uri
+      BREAKING CHANGE, testing heroku db
+      adding postgres to requirements
+      Testing DATABASE_URL
+      Added "ql" to end of database_url
+      Fixed typo when hacking db url
+      Added a separate sqlite option for testing database locally
+      Updated home page copy
+      Added date checker for searching events
+      Flask will now check date before creating events
+      Added debug messages for database
+      Added prefilled forms for event filters
+
+JinHao1132 (19):
+      testing git
+      Merge branch 'main' of https://github.com/HansT01/IAB207-Events
+      Fixed tickets booking and added column to user table
+      Comment out the some code for register
+      Fixed the registration form and User databse
+      implement tickets changes function
+      show the total price in booking history for each event
+      add background image on the landing page
+      Update landing page
+      Merge branch 'main' of https://github.com/HansT01/IAB207-Events
+      remove code no longer in sue
+      Added delete button and fixing routing error
+      refine the delete function
+      Refine delete booking function
+      Adding event to database
+      Merge branch 'main' of https://github.com/HansT01/IAB207-Events
+      change some descriptions of events
+      update description again
+      more changes
+
+ypdo1 (20):
+      Update main.py
+      Update models.py
+      Merge branch 'main' of https://github.com/HansT01/IAB207-Events
+      Update views.py
+      Separated venue name and venue address
+      Add search limit
+      Merge branch 'main' of https://github.com/HansT01/IAB207-Events
+      Merge branch 'main' of https://github.com/HansT01/IAB207-Events
+      Added text to specify currency
+      Merge branch 'main' of https://github.com/HansT01/IAB207-Events
+      Added sort by date
+      Merge branch 'main' of https://github.com/HansT01/IAB207-Events
+      Update main.css
+      Add line break to create/edit event page
+      Add & edit some comments
+      Add Procfile and Requirements
+      Minor fix to booking form
+      Merge branch 'main' of https://github.com/HansT01/IAB207-Events
+      Fixed min imput for ticket and price
+      Removed not needed code
+
