@@ -1,0 +1,74 @@
+{% from "_formhelpers.jinja" import render_field %}
+
+<div class="modal fade" id="modal-{{index}}" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content bg-400 border-0 tx-000">
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      <div class="ratio ratio-16x9">
+        <img src="{{event.image}}" class="img-fluid rounded-top card-img" alt="concert" />
+      </div>
+
+      <section class="modal-body">
+        <div class="row">
+          <div class="col-xs-12 col-sm mb-2">
+            <h3>{{event.title}}</h3>
+          </div>
+          <div class="col-auto mb-2">
+            <h3>{{event.status_display.upper()}}</h3>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm">
+            <p>
+              <b>Artist:</b> {{event.artist}} <br />
+              <b>Genre:</b> {{event.genre}} <br />
+              <b>Date:</b> {{event.timestamp.strftime("%d %b %Y, %I:%M %p")}}
+              <br />
+              <b>Venue Name:</b> {{event.venue_name}} <br />
+              <b>Venue Address:</b> {{event.venue_address}}
+            </p>
+          </div>
+          <div class="col-auto text-sm-end">
+            <p>
+              {{event.tickets}} tickets available <br />
+              ${{event.price}} per ticket
+            </p>
+            <button type="button" class="col btn bg-200 tx-000" data-bs-dismiss="modal" data-bs-toggle="modal"
+              href="#booking-modal-{{index}}">
+              Buy a ticket here!
+            </button>
+          </div>
+        </div>
+
+        <div class="row">
+          <p class="mt-4 event-description">{{event.desc}}</p>
+        </div>
+      </section>
+
+      <hr class="m-0" />
+
+      <div class="p-3">
+        <div class="row pt-0">
+          <div class="mb-0">
+            <form method="post">
+              {{ commentform.csrf_token }}
+              {{ render_field(commentform.event_id, type="hidden", value=event.id) }}
+              <textarea class="form-control" id="desc" name="desc" placeholder="Write a comment"></textarea>
+              <div class="d-flex">
+                {{ render_field(commentform.submit, type="submit", class="ms-auto mt-3 btn bg-200 tx-000") }}
+              </div>
+            </form>
+          </div>
+        </div>
+
+        {% for comment in event.comments %}
+        <!-- modalcomment -->
+        {% include "./components/modalcomment.jinja" %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

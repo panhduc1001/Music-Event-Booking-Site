@@ -1,0 +1,107 @@
+{% from "_formhelpers.jinja" import render_field %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+<div class="modal fade" id="event-editor-{{index}}" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content bg-400 tx-000">
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      <form action="" method="post" enctype="multipart/form-data">
+        {{ eventform.csrf_token }}
+
+
+
+        <section class="modal-header">
+          {% if event != none %}
+          <h1>Edit existing event</h1>
+          {{ render_field(eventform.event_id, type="hidden", value=event.id) }}
+          {% else %}
+          <h1>Create new event</h1>
+          {{ render_field(eventform.event_id, type="hidden", value=none) }}
+          {% endif %}
+
+        </section>
+
+        <section class="modal-body p-3">
+          <div class="row nopadding">
+            <div class="">
+              {{ render_field(eventform.title, type="text", class="form-control", placeholder="Event title", value=event.title) }}
+            </div>
+
+            <div class="my-2">
+              {% if event != none %}
+              {{ render_field(eventform.image, type="file", class="form-control", required=false) }}
+              {% else %}
+              {{ render_field(eventform.image, type="file", class="form-control", required=true) }}
+              {% endif %}
+            </div>
+
+            <div>
+              <hr>
+            </div>
+
+            <div class="my-2">
+              {{ render_field(eventform.venue_name, type="text", class="form-control", placeholder="Venue name", value=event.venue_name) }}
+            </div>
+
+            <div class="my-2">
+              {{ render_field(eventform.venue_address, type="text", class="form-control", placeholder="Venue address", value=event.venue_address) }}
+            </div>
+
+            <div class="my-2 col-sm-6">
+              {{ render_field(eventform.artist, type="text", class="form-control", placeholder="Artist name", value=event.artist) }}
+            </div>
+
+            <div class="my-2 col-sm-6">
+              {{ eventform.status.label }}
+              <select class="form-control" id="status" name="status" type="text">
+                <option value="">Select a status</option>
+                {% for option in eventform.status.choices %}
+                {% if option == event.status %}
+                <option value="{{option}}" selected>{{option.upper()}}</option>
+                {% else %}
+                <option value="{{option}}">{{option.upper()}}</option>
+                {% endif %}
+                {% endfor %}
+              </select>
+            </div>
+
+            <div class="my-2 col-sm-6">
+              {{ render_field(eventform.genre, type="text", class="form-control", placeholder="Event genre", value=event.genre) }}
+            </div>
+
+            <div class="my-2 col-sm-6">
+              {{ render_field(eventform.timestamp, type="datetime-local", class="form-control", value=event.timestampformatted) }}
+            </div>
+
+            <div class="my-2 col-sm-6">
+              {{ render_field(eventform.tickets, type="number", class="form-control", placeholder="Number of available tickets", value=event.tickets, min=0) }}
+            </div>
+
+            <div class="my-2 col-sm-6">
+              {{ render_field(eventform.price, type="number", class="form-control", placeholder="Price per ticket", value=event.price, min=0) }}
+            </div>
+          </div>
+
+          <div>
+            <hr>
+          </div>
+
+          <div class="row nopadding my-2">
+            <div class="">
+              {{ eventform.desc.label }}
+              <textarea class="form-control" id="desc" name="desc" placeholder="Enter a description of the event" ,
+                oninput="auto_grow_textarea(this)">{{ event.desc }}</textarea>
+            </div>
+          </div>
+
+          <div class="row d-flex justify-content-center mt-3">
+            {{ render_field(eventform.submit, type="submit", class="btn bg-200 tx-000 login-button") }}
+          </div>
+        </section>
+      </form>
+
+    </div>
+  </div>
+</div>

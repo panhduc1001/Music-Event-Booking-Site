@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand navbar-dark fixed-top shadow bg-1000 tx-700">
+  <div class="container">
+    <ul class="navbar-nav d-flex justify-content-evenly w-100">
+      <li class="nav-item">
+        <a class="nav-link d-flex" href="{{url_for('main.index')}}">
+          <i class="fas fa-2x fa-home fa-fw mx-2"></i>
+          <span class="nav-text link-text align-self-center"> Home page </span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link d-flex" href="{{url_for('findevents.show')}}">
+          <i class="fas fa-2x fa-search fa-fw mx-2"></i>
+          <span class="nav-text link-text align-self-center">
+            Find events
+          </span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link d-flex" href="{{url_for('myevents.show')}}">
+          <i class="fas fa-2x fa-clipboard-list fa-fw mx-2"></i>
+          <span class="nav-text link-text align-self-center"> My events </span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link d-flex" href="{{url_for('bookedevents.show')}}">
+          <i class="fas fa-2x fa-bookmark fa-fw mx-2"></i>
+          <span class="nav-text link-text align-self-center">
+            Booked events
+          </span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link d-flex" href="{{url_for('auth.account')}}">
+          <i class="fas fa-2x fa-user-circle fa-fw mx-2"></i>
+          <span class="nav-text link-text align-self-center"> Account </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

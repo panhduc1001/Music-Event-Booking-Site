@@ -1,0 +1,21 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+<div class="page container">
+  <div class="mt-3 d-flex justify-content-center">
+    <h1 class="tx-400">Find Events</h1>
+  </div>
+  <div class="row justify-content-center p-3">
+    <!-- eventfilters -->
+    {% include "./components/eventfilters.jinja" %}
+
+    <div class="col-lg-8">
+      {% for index, event in events %}
+      <!-- findeventsrow -->
+      {% include "./components/findeventsrow.jinja" %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,35 @@
+{% extends 'base.jinja' %}
+
+{% block content %}
+<div class="page container">
+  <div class="d-flex justify-content-center my-5 mw-100">
+    <h1 class="tx-400 text-center" style="font-size: 3rem;">
+      500 - Internal Server Error
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="d-flex justify-content-center mb-3 mw-100">
+      <p class="text-center" style="font-size: 1.5rem;">
+        The server encountered an internal error or misconfiguration and was unable to complete your request.
+      </p>
+    </div>
+    <div class="d-flex justify-content-center mb-3 mw-100">
+      <p class="text-center" style="font-size: 1.5rem;">
+        Try refreshing the page. Alternatively, contact the server administrator with anything you might have done that
+        may have caused the error.
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="d-flex justify-content-center my-5">
+      <a href="{{url_for('main.index')}}">
+        <button type="button" name="button" class="btn btn-lg create-button bg-200 tx-000 mw-100">
+          Back to home page
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock content %}

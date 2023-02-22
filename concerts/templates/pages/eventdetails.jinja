@@ -1,0 +1,13 @@
+{% extends "base.jinja" %}
+{% from "_formhelpers.jinja" import render_field %}
+
+{% block content %}
+<div class="page container bg-400 tx-000">
+  <!-- eventcontent -->
+  {% include "./components/eventcontent.jinja" %}
+
+  <!-- bookingmodal -->
+  {% include "./components/bookingmodal.jinja" %}
+</div>
+
+{% endblock content %}

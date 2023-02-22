@@ -1,0 +1,17 @@
+{% macro render_field(field) %}
+
+{% if field.type != "SubmitField" and field.type != "HiddenField" %}
+{{ field.label }}
+{% endif %}
+
+{{ field(**kwargs)|safe }}
+
+{% if field.errors %}
+{% for error in field.errors %}
+<div class="form-text text-muted mt-2 tx-050">
+  {{error}}
+</div>
+{% endfor %}
+{% endif %}
+
+{% endmacro %}

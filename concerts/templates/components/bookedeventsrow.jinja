@@ -1,0 +1,32 @@
+<div class="nopadding card-filter mb-3">
+  <div class="card shadow bg-400">
+    <div class="card-header">
+      <a class="collapsed text-decoration-none d-flex" data-bs-toggle="collapse" href="#collapse-{{index}}"
+        aria-expanded="true" aria-controls="collapse-collapsed" id="heading-collapsed">
+        <h5 class="mb-0 align-self-center tx-000">
+          {{booking.event.title}} - Booking ID: {{booking.id}}
+        </h5>
+        <i class="
+            fa fa-lg fa-chevron-down fa-fw
+            ms-auto
+            align-self-center
+            tx-000
+          "></i>
+      </a>
+    </div>
+
+    <div id="collapse-{{index}}" class="collapse" aria-labelledby="heading-collapsed">
+      <div class="p-0 bg-300 tx-000">
+        <div class="text-left mb-1 p-3">
+          <h5 class="">Date booked: {{booking.timestamp.strftime("%d %b %Y, %I:%M %p")}}</h5>
+          <h5 class="">Tickets booked: {{booking.tickets}}</h5>
+          <h5 class="">Price per ticket: ${{booking.price}} AUD</h5>
+          <h5 class="">Total cost: ${{booking.price * booking.tickets}} AUD</h5>
+        </div>
+        {% set event = booking.event %}
+        <!-- eventcard -->
+        {% include "./components/eventcard.jinja" %}
+      </div>
+    </div>
+  </div>
+</div>

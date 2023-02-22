@@ -1,0 +1,50 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+<div class="page default fluid-container bg-600">
+  <div class="container home-page py-4 tx-000">
+    <div class="row">
+      <div class="d-flex justify-content-center my-5">
+        <h1 class="text-center" style="font-size: 3rem;">
+          Ever wanted to host a concert? Interested in attending one?
+        </h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="d-flex justify-content-center my-3">
+        <p class="text-center" style="font-size: 1.5rem;">
+          You have come to the right place! Here, we make hosting concerts fast and easy
+          so artists can focus on making the greatest performance!
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="d-flex justify-content-center my-3">
+        <p class="text-center" style="font-size: 1.5rem;">
+          Sound interesting? Try browsing through our upcoming events!
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="d-flex justify-content-center my-3">
+        <a href="{{url_for('findevents.show')}}">
+          <button type="button" name="button" class="btn bg-200 tx-000" style="font-size: 1rem; width: 15em;">
+            Show me the events!
+          </button>
+        </a>
+      </div>
+    </div>
+    <div class=" row my-3">
+      <div class="d-flex justify-content-center">
+        <p style="font-size: 1rem;">Already have an account?</p>
+      </div>
+      <div class="d-flex justify-content-center">
+        <p style="font-size: 1rem;">
+          Click&#160;<a href="{{url_for('auth.account')}}">here</a>&#160;to log
+          in.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

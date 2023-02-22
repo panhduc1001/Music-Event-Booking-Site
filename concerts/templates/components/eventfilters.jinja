@@ -1,0 +1,72 @@
+{% from "_formhelpers.jinja" import render_field %}
+
+<div class="col-lg-4 nopadding card-filter pe-3 mb-3">
+  <div class="card shadow bg-400">
+    <div class="card-header">
+      <a class="collapsed text-decoration-none d-flex" data-bs-toggle="collapse" href="#collapse-collapsed"
+        aria-expanded="true" aria-controls="collapse-collapsed" id="heading-collapsed">
+        <h5 class="mb-0 align-self-center tx-000">Event filters</h5>
+        <i class="
+            fa fa-lg fa-chevron-down fa-fw
+            ms-auto
+            align-self-center
+            tx-000
+          "></i>
+      </a>
+    </div>
+
+    <div id="collapse-collapsed" class="collapse show" aria-labelledby="heading-collapsed">
+      <div class="p-3 bg-300 tx-000">
+        <form class="form-inline">
+          <div class="">
+            {{ render_field(filterform.title, type="text", placeholder="Event title", class="form-control", value=request.args["title"]) }}
+          </div>
+
+          <div class="mt-3">
+            {{ render_field(filterform.artist, type="text", placeholder="Event artist", class="form-control", value=request.args["artist"]) }}
+          </div>
+
+          <div class="mt-3">
+            {{ render_field(filterform.genre, type="text", placeholder="Event genre", class="form-control", value=request.args["genre"]) }}
+          </div>
+
+          <hr />
+
+          <div class="mt-3">
+            {{ render_field(filterform.aftertimestamp, type="datetime-local", class="form-control", value=request.args["aftertimestamp"]) }}
+          </div>
+
+          <div class="mt-3">
+            {{ render_field(filterform.beforetimestamp, type="datetime-local", class="form-control", value=request.args["beforetimestamp"]) }}
+          </div>
+
+          <div class="mt-3">
+            {{ filterform.status.label }}
+            <select class="form-control" id="status" name="status" type="text">
+              <option value="" selected>Select a status</option>
+              {% for option in filterform.status.choices %}
+
+              {% if request.args['status'] == option %}
+              <option value="{{option}}" selected>{{option.upper()}}</option>
+              {% else %}
+              <option value="{{option}}">{{option.upper()}}</option>
+              {% endif %}
+
+              {% endfor %}
+
+              {% if request.args['status'] == "booked" %}
+              <option value="booked" selected>{{"booked".upper()}}</option>
+              {% else %}
+              <option value="booked">{{"booked".upper()}}</option>
+              {% endif %}
+            </select>
+          </div>
+
+          <div class="mt-4">
+            {{ render_field(filterform.submit, type="submit", class="flex-shrink-1 btn tx-000 bg-200 w-100") }}
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

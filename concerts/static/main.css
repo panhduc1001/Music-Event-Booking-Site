@@ -1,0 +1,336 @@
+:root {
+  /* Slick theme */
+  --clr-primary-100: #ff9595;
+  --clr-primary-200: #66200e;
+  --clr-primary-300: #ad3b1f;
+  --clr-primary-400: #36302f;
+  --clr-primary-500: #fcf7eb;
+
+  /* Vintage theme */
+  /* --clr-primary-100: #ede7d9;
+  --clr-primary-200: #d4b17c;
+  --clr-primary-300: #8f3f4c;
+  --clr-primary-400: #534f4a;
+  --clr-primary-500: #fcf7eb; */
+
+  --clr-neutral-000: #ffffff;
+  --clr-neutral-500: #ececec;
+  --clr-neutral-1000: #000000;
+
+  --ff-primary: "Montserrat", sans-serif;
+  --ff-accent: "Oswald", sans-serif;
+
+  /* --ff-accent: "Playfair Display", serif;
+  --ff-primary: "Roboto", sans-serif; */
+
+  --font-size-rem: 1rem;
+  --transition-speed: 250ms;
+}
+
+/* Remove default margins */
+body,
+small,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--ff-accent);
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: var(--ff-primary);
+  height: 100%;
+}
+
+main {
+  /* margin for navbar */
+  padding-top: 4rem;
+  /* background-color: green; */
+  min-height: 100%;
+}
+
+/*Hover effect for navbar*/
+header ul li a:hover {
+  transform: scale(1.05);
+}
+
+.page {
+  min-height: calc(100vh - 4rem);
+}
+
+/* Should be used for all css, keeps image max width at 100% of container width */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Utility classes */
+.nopadding {
+  padding: 0;
+}
+
+.bg-000 {
+  background-color: var(--clr-neutral-000);
+  border-color: var(--clr-neutral-000);
+}
+
+.bg-100 {
+  background-color: var(--clr-primary-100);
+  border-color: var(--clr-primary-100);
+}
+
+.bg-200 {
+  background-color: var(--clr-primary-200);
+  border-color: var(--clr-primary-200);
+}
+
+.bg-300 {
+  background-color: var(--clr-primary-300);
+  border-color: var(--clr-primary-300);
+}
+
+.bg-400 {
+  background-color: var(--clr-primary-400);
+  border-color: var(--clr-primary-400);
+}
+
+.bg-500 {
+  background-color: var(--clr-primary-500);
+  border-color: var(--clr-primary-500);
+}
+
+.bg-600 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("https://images.pexels.com/photos/1306791/pexels-photo-1306791.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-position: center;
+  background-size: cover;
+}
+
+.bg-1000 {
+  background-color: var(--clr-neutral-1000);
+  border-color: var(--clr-neutral-1000);
+}
+
+.tx-000 {
+  color: var(--clr-neutral-000) !important ;
+}
+
+.tx-050 {
+  color: var(--clr-neutral-500) !important ;
+}
+
+.tx-100 {
+  color: var(--clr-primary-100);
+}
+
+.tx-200 {
+  color: var(--clr-primary-200);
+}
+
+.tx-300 {
+  color: var(--clr-primary-300);
+}
+
+.tx-400 {
+  color: var(--clr-primary-400);
+}
+
+.tx-500 {
+  color: var(--clr-primary-500);
+}
+
+.tx-600 {
+  color: var(--clr-neutral-000) !important ;
+  font-size: xx-large;
+}
+
+.tx-700 {
+  font-size: larger;
+}
+
+.fa-2x {
+  vertical-align: middle;
+}
+
+/* margins for ticket purchase button */
+.col-auto > p {
+  text-align: right;
+  margin-bottom: 0.5em;
+}
+
+@media only screen and (max-width: 576px) {
+  .col-auto > p,
+  .col-auto > button {
+    text-align: left;
+  }
+}
+
+/* formatting for the close button */
+.modal-content > button {
+  position: absolute;
+  z-index: 1;
+  align-self: flex-end;
+  margin: 0.5rem 0.5rem;
+}
+
+/* CSS for comments */
+.input-box {
+  position: relative;
+}
+
+.comment-button {
+  position: absolute;
+  right: 0;
+  margin-top: 0.75rem;
+  margin-right: 0.75rem;
+}
+
+@media only screen and (min-width: 576px) {
+  .comment-deco > p {
+    padding-left: 0;
+  }
+}
+
+.link-text > svg {
+  margin-right: 0.25rem;
+}
+
+.link-text > p {
+  margin-bottom: 0;
+}
+
+/* Card display */
+@media only screen and (max-width: 767px) {
+  .card-img-section {
+    display: none;
+  }
+}
+
+/*Hover effect for card*/
+.hover-effect:hover {
+  transform: scale(1.01);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.card-img {
+  aspect-ratio: 16/9;
+  max-height: fit-content;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-color: var(--clr-neutral-000);
+  border-width: 1rem;
+}
+
+.card-desc {
+  height: 3em;
+  overflow: hidden;
+}
+
+/* card-filter display */
+@media only screen and (max-width: 991px) {
+  .card-filter {
+    padding: 0 !important;
+  }
+}
+
+.card-header .fa {
+  transition: 0.3s transform ease-in-out;
+}
+
+.card-header .collapsed .fa {
+  transform: rotate(90deg);
+}
+
+.edit-button {
+  height: 3em;
+  vertical-align: middle;
+}
+
+.create-button {
+  height: 3em;
+  width: 20em;
+}
+
+.conditional-flex-direction {
+  flex-direction: column !important;
+}
+
+@media only screen and (max-width: 576px) {
+  .card-modal + .col-sm-3 {
+    padding: 0 !important;
+  }
+
+  .conditional-padding {
+    padding: 0 !important;
+  }
+
+  .conditional-flex-direction {
+    flex-direction: row !important;
+  }
+}
+
+/* Login page */
+.login-container {
+  height: 100vh;
+}
+
+.login-button {
+  width: 10em;
+}
+
+/* Navbar */
+@media only screen and (max-width: 991px) {
+  .nav-text {
+    display: none;
+  }
+}
+
+/* Home page */
+.home-page {
+  max-width: min(650px, 90%);
+}
+
+/* Link text */
+a {
+  color: var(--clr-neutral-000) !important;
+  font-size: 1rem;
+}
+
+a:hover {
+  color: var(--clr-primary-100) !important;
+}
+
+/* Button */
+.btn:hover {
+  background-color: var(--clr-primary-100) !important;
+}
+
+.comment-deco .btn:hover {
+  color: var(--clr-primary-100) !important;
+}
+
+/* Keep text white space when rendering event description */
+.event-description {
+  white-space: pre-wrap;
+}
+
+textarea {
+  height: 65px;
+}
